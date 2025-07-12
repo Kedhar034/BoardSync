@@ -14,6 +14,7 @@ import { api } from "@/convex/_generated/api";
 import { ConfirmModal } from "./consirm-modal";
 import { Button } from "./ui/button";
 import { useRenameModal } from "@/store/use-rename-modal";
+import { Id } from "@/convex/_generated/dataModel";
 
 interface ActionProps {
     children: React.ReactNode;
@@ -42,7 +43,7 @@ export const Actions = ({
     };
 
     const onDelete = () => {
-        mutate({ id })
+        mutate({ id: id as Id<"boards"> })
             .then(() => toast.success("Board deleted"))
             .catch(() => toast.error("Failed to delete board"));
     };
