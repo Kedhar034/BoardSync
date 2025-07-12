@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/dialog";
 
 import { useRenameModal } from "@/store/use-rename-modal";
-import { FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
+import { Id } from "@/convex/_generated/dataModel";
 
 
 export const RenameModal = () =>{
@@ -43,7 +44,7 @@ export const RenameModal = () =>{
     ) =>{
         e.preventDefault();
         create({
-            id:initialValues.id,
+            id:initialValues.id as Id<"boards">,
             title,
         })
         .then(()=>{

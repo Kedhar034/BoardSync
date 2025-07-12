@@ -19,7 +19,7 @@ export const EmptyBoards = () => {
             orgId: organization.id,
             title:"untitled"
         })
-        .then((id) => {
+        .then(() => {
             toast.success("Board Created")
             //TODO : redirect the board/{id}
         })

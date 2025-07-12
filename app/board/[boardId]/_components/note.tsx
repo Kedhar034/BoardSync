@@ -1,4 +1,3 @@
-import { useStorage } from "@/liveblocks.config";
 import ContentEditable,{ ContentEditableEvent } from "react-contenteditable";
 import { NoteLayer } from "@/types/canvas";
 import {cn, colorToCss, getContrastingTextColor} from "@/lib/utils";
