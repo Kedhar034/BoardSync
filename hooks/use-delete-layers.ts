@@ -9,6 +9,8 @@ export const useDeleteLayers = ()=>{
         const liveLayers = storage.get("layers");
         const livelayersIds = storage.get("layerIds");
 
+        if (!selection) return;
+        
         for( const id of selection){
             liveLayers.delete(id);
 
